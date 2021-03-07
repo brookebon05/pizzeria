@@ -1,4 +1,4 @@
-# Brooke Bonadies
+# Brooke Bonadie
 import pygame
 
 

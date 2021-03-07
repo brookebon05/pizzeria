@@ -1,4 +1,4 @@
-# Brooke Bonadies pygame File1
+# Brooke Bonadies
 import sys
 import pygame
 from settings import Settings

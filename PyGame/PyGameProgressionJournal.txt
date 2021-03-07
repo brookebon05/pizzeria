@@ -23,3 +23,4 @@ an underscore to a self argument which was giving me a name error.
 -press Q to quit, play in full screen now
 -RECAP ON PAGE 245
 -made bullet file and drew bullets
+-bullets fire off page and have a limit
