@@ -1,4 +1,3 @@
-# Brooke Bonadie
 import pygame
 
 
