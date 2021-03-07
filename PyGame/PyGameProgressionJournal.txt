@@ -1,0 +1,22 @@
+3.3.2021
+-Set up virtual environment ".venvpygame"
+-installed pygame
+-Created .gitignore file
+-Created new repository
+
+3.4.2021
+-Created and wrote alien_invasion file
+-Created settings file
+
+3.5.2021
+-Troubleshooted. Import of pygame was not working, and I added 
+an underscore to a self argument which was giving me a name error.
+-created ship class
+-got ship to appear when alien_invasion is run
+
+3.6.2021
+-updated alien_invasion
+-updated ship
+-got ship to move when arrow keys are pressed
+-adjusted ship's speed in settings
+-limited the ship's range in ship
