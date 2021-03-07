@@ -1,3 +1,4 @@
+# Brooke Bonadies
 class Course:
     def __init__(self, title1, crn1, capacity1, code1):
         self.__title = title1
