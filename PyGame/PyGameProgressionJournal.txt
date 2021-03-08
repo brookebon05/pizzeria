@@ -24,3 +24,8 @@ an underscore to a self argument which was giving me a name error.
 -RECAP ON PAGE 245
 -made bullet file and drew bullets
 -bullets fire off page and have a limit 
+
+3.7.2021
+- fleet created and moves
+-bullets and ships disappear when shot
+-game stats file made
