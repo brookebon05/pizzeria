@@ -26,6 +26,13 @@ an underscore to a self argument which was giving me a name error.
 -bullets fire off page and have a limit 
 
 3.7.2021
-- fleet created and moves
+-fleet created and moves
 -bullets and ships disappear when shot
 -game stats file made
+
+3.8.2021
+-button file made
+-play button works and mouse disappears
+-fleet starts moving faster
+-zero appears in top right corner
+-scoreboard file made
