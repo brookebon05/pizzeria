@@ -34,5 +34,5 @@ an underscore to a self argument which was giving me a name error.
 -button file made
 -play button works and mouse disappears
 -fleet starts moving faster
--zero appears in top right corner
 -scoreboard file made
+-zero appears in top right corner
