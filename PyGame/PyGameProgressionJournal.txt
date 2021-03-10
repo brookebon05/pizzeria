@@ -36,3 +36,9 @@ an underscore to a self argument which was giving me a name error.
 -fleet starts moving faster
 -scoreboard file made
 -zero appears in top right corner
+
+3.9.2021
+-implemented scoreboard and scoring 
+-implemented high score
+-made mulitple ships
+-finished game
