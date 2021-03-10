@@ -40,5 +40,6 @@ an underscore to a self argument which was giving me a name error.
 3.9.2021
 -implemented scoreboard and scoring 
 -implemented high score
+-displayed level
 -made mulitple ships
 -finished game
