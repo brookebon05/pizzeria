@@ -2,6 +2,8 @@
 import pygame
 from pygame.sprite import Sprite
 
+# updates and draws the ship
+
 
 class Ship(Sprite):
     # a class to manage the ship

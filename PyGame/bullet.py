@@ -2,6 +2,8 @@
 import pygame
 from pygame.sprite import Sprite
 
+# Store bullets position, sets it up,
+
 
 class Bullet(Sprite):
     # A class to manage bullets fired from the ship

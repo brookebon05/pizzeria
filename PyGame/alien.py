@@ -1,6 +1,9 @@
 import pygame
 from pygame.sprite import Sprite
 
+# loads the alien image and positions it
+# also updates the alien so it can move
+
 
 class Alien(Sprite):
     # A class to represent a single alien in the fleet

@@ -2,6 +2,9 @@ import pygame.font
 from pygame.sprite import Group
 from ship import Ship
 
+# initializes the scorekeeping attributes, keeps high score, shows the score,
+# and preps the ships
+
 
 class Scoreboard:
     # A class to report scoring info
@@ -74,7 +77,7 @@ class Scoreboard:
         self.level_rect.top = self.score_rect.bottom + 10
 
     def prep_ships(self):
-        # show how mny ships are left
+        # show how many ships are left
         self.ships = Group()
         for ship_number in range(self.stats.ships_left):
             ship = Ship(self.ai_game)

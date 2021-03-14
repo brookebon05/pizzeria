@@ -1,5 +1,6 @@
 class GameStats:
     # Track statistics for alien invasion
+    # initialize and reset stats
 
     def __init__(self, ai_game):
         # initialize statisitcs
