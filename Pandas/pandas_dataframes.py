@@ -49,3 +49,5 @@ print(grades)
 
 grades.sort_index(axis=1)
 grades.sort_values(by="test1", axis=1, ascending=False)
+
+print(grades)
