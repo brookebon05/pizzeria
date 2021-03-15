@@ -18,3 +18,6 @@ grades = pd.Series({"wally": 87, "eve": 90, "sam": 60})
 print(grades)
 print(grades.Wally)
 print(grades.values)
+
+"""0 Hammer
+"""
