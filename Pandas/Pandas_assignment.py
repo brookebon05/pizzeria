@@ -14,19 +14,38 @@ Using the index keyword argument, specify the custom indices 'Julie', 'Charlie',
 Form a dictionary from the names and values in Part (4), then use it to initialize a Series.
 """
 import pandas as pd
-import random as r
+import numpy as np
 
-print("PART ONE \n\n")
+print("\nPART ONE \n")
 series1 = pd.Series([7, 11, 13, 17])
-print("Panda series 1:\n", series1)
+print("Panda series 1: \n\n", series1, sep="")
+print("\n\n")
 
-print("PART TWO \n\n")
+print("PART TWO \n")
 series2 = pd.Series(100.0, range(5))
-print("Panda series 2:\n", series2)
+print("Panda series 2: \n\n", series2, sep="")
+print("\n\n")
 
-print("PART THREE \n\n")
-series3 = pd.Series(r.randint(1, 100, size=20))
-print("Panda series 3:\n", series3)
+print("PART THREE \n")
+numbers = np.random.randint(0, 101, size=20)
+series3 = pd.DataFrame(numbers, columns=["Random numbers between 0 and 100"])
+print("Series 3: \n\n", series3, sep="")
+print("\nPanda series 3 described:\n\n", series3.describe())
+print("\n\n")
 
-print("PART FOUR \n\n")
-print("PART FIVE \n\n")
+print("PART FOUR \n")
+temperatures = pd.Series([98.6, 98.9, 100.2, 97.9])
+temperatures.index = ["Julie", "Charlie", "Sam", "Andrea"]
+print("Temperatures: \n\n", temperatures, sep="")
+print("\n\n")
+
+print("PART FIVE \n")
+temps_dict = {
+    "Julie": [98.6],
+    "Charlie": [98.9],
+    "Sam": [100.2],
+    "Andrea": [97.9],
+}
+temps = pd.DataFrame(temps_dict)
+print("Temperatures formed from a dictionary: \n\n", temps)
+print("\n\n")
