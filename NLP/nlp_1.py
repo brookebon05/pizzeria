@@ -1,4 +1,5 @@
 from textblob import TextBlob
+from textblob import Word
 
 text = "Today is a beautiful day. Tomorrow looks like bad weather."
 blob = TextBlob(text)  # converts text into blob
@@ -34,19 +35,54 @@ blob = TextBlob(
 from textblob import Word
 
 index = Word("index")
-print(index.pluralize())
+# print(index.pluralize()) #prints indices
 
 cacti = Word("cacti")
-print(cacti.singularize())
+# print(cacti.singularize())
 animals = TextBlob("dog cat fish bird").words
 
-print(animals.pluralize())
+# print(animals.pluralize())
 
-word = Word("theyr")
-print(word.spellcheck())
-word.correct()
-print(word)
+# word = Word("theyr")
+# print(word.spellcheck())
+# word.correct()
+# print(word)
 
 sentence = TextBlob("Ths sentence has missplled words")
 corr_sentence = sentence.correct()
-print(corr_sentence)
+# print(corr_sentence)
+
+# lemmatization: varieties to variety
+
+word1 = Word("studies")
+word2 = Word("varieties")
+print(word1.lemmatize())  # prints study
+
+happy = Word("happy")
+print(happy.definitions)  # prints definitions of happy
+"""
+for synset in happy.synsets:
+    print(synset)  # every synset has a lemma
+    print(lemma)
+    print(lemma.name())  # gives us synonyms
+"""
+lemmas = happy.synsets[0].lemmas()
+print(lemmas)
+for lemma in lemmas[0].antonyms():
+    print(lemma.name())
+
+import nltk
+
+# nltk.download("stopwords")
+from nltk.corpus import stopwords
+
+stops = stopwords.words("english")
+
+print(stops)
+
+text = "Today is a beautiful day."
+blob = TextBlob(text)
+# eliminate words using list comprehension
+# blob.words will be a list
+newlist = [i for i in blob.words if word not in stops]
+print(newlist)
