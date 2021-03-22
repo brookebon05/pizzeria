@@ -84,5 +84,5 @@ text = "Today is a beautiful day."
 blob = TextBlob(text)
 # eliminate words using list comprehension
 # blob.words will be a list
-newlist = [i for i in blob.words if word not in stops]
+newlist = [i for i in blob.words if i not in stops]
 print(newlist)
