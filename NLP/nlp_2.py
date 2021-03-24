@@ -10,14 +10,14 @@ print(blob.word_counts["juliet"])
 print(blob.word_counts["romeo"])
 print(blob.word_counts["thou"])
 print(blob.word_counts["joy"])
-print(blob.noun_phrases.count["lady capulet"])
+print(blob.noun_phrases.count("lady capulet"))
 
 stops = stopwords.words("english")
 more_stops = ["thee", "thy", "thou"]
 stops += more_stops
 
 items = blob.word_counts.items()
-print(items)  # prints dict_items with list of tuples, words and count of them as values
+# print(items)  # prints dict_items with list of tuples, words and count of them as values
 items = [item for item in items if item[0] not in stops]
 print(items[:10])
 
@@ -37,17 +37,19 @@ df.plot.bar(
     x="word", y="count", rot=0, legend=False, color=["y", "c", "m", "b", "g", "r"]
 )
 plt.gcf().tight_layout()
-plt.show()
+# plt.show()
 
 from pathlib import Path
 from wordcloud import WordCloud
 import imageio
 
 text = Path("RomeoAndJuliet.txt").read_text()
-print(text)
+
+# print(text)
 
 mask_image = imageio.imread("mask_heart.png")
-wordcloud = WordCloud(colormap="prism", maske=mask_image, background_color="white")
+wordcloud = WordCloud(colormap="prism", mask=mask_image, background_color="white")
+wordcloud = wordcloud.generate(text)
 wordcloud = wordcloud.to_file("RomeoAndJulietHeart.png")
 plt.imshow(wordcloud)
 print("done")
