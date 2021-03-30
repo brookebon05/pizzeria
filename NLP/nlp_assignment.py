@@ -4,7 +4,6 @@ import nltk
 from nltk.corpus import stopwords
 from pathlib import Path
 import pandas as pd
-from pathlib import Path
 from operator import itemgetter
 from wordcloud import WordCloud
 import imageio
@@ -63,7 +62,7 @@ for i in first_tuple_elements:
 print(top15str)
 
 # MAKE WORDCLOUD
-wordcloud = WordCloud(colormap="prism", background_color="gray")
+wordcloud = WordCloud(colormap="Blues", background_color="gray")
 wordcloud = wordcloud.generate(top15str)
 wordcloud = wordcloud.to_file("BookOfJohn.png")
 plt.imshow(wordcloud)
