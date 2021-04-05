@@ -2,6 +2,10 @@ from sklearn.datasets import load_digits
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
+from sklearn.metrics import confusion_matrix
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt2
 
 digits = load_digits()
 # print(digits.DESCR)
@@ -50,3 +54,22 @@ predicted = knn.predict(X=data_test)
 expected = target_test
 print(predicted[:20])
 print(expected[:20])
+
+wrong = [(p, e) for (p, e) in zip(predicted, expected) if p != e]
+# prints expected vs what we actually got that's wrong (9,8)
+print(wrong)
+
+print(format(knn.score(data_test, target_test), ".2%"))
+
+confusion = confusion_matrix(y_true=expected, y_pred=predicted)
+print(confusion)
+# prints a matrix with rows for numbers and the guesses
+# [0 0 0 42 0 1 0 1 0 0] means it guessed 3 42 times right and then
+# 5 and 7 once as 3 incorrectly
+
+confusion_df = pd.DataFrame(confusion, index=range(10), columns=range(10))
+figure = plt2.figure(figsize=(7, 6))
+axes = sns.heatmap(confusion_df, annot=True, cmap=plt2.cm.nipy_spectral_r)
+plt2.show()
+
+print("done")
