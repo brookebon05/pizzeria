@@ -67,7 +67,7 @@ for x in int_array:
 # CREATE SERIES OF NAMES
 names = animals_test.iloc[:, 0]
 
-# WRITE TO THE FILE
+# WRITE TO  THE FILE
 outfile = open("predictions2.csv", "w")
 outfile.write("animal_name, prediction")
 for i in range(36):
