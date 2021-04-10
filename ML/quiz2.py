@@ -55,7 +55,9 @@ y_pred = regr.predict(test_x)
 
 # ROUND THE VALUES AND MAKE IT THE RIGHT TYPE
 y_pred2 = np.rint(y_pred)
+print(y_pred)
 int_array = y_pred2.astype(int)
+print(int_array)
 
 # CREATE LIST OF PREDICTIONS
 type1 = []
