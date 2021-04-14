@@ -5,4 +5,4 @@ from django.shortcuts import render
 
 def index(request):
     # The home page for LEarning Log
-    return render(request, "mainapp/index.html")
+    return render(request, "MainApp/index.html")
