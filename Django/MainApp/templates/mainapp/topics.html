@@ -1,0 +1,18 @@
+{% extends "MainApp/base.html" %}
+
+{% block content %}
+<p> Topics</p>
+<u1>{% for topic in topics %}
+    <li>
+        <a href="{% url 'MainApp:topic' t.id %}">{{ t }} </a>
+    </li>
+    {% empty %}
+    <p> no topics have been added yet.</p>
+    {% endfor %}
+</u1>
+
+<p> Learning Log helps you keep track of your learning with any topic
+
+</p>
+
+{% endblock content %}
