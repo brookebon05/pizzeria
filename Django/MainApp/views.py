@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Topic
 from .forms import TopicForm
 
@@ -28,10 +28,23 @@ def new_topic(request):
     if request.method != "POST":  # is a get request
         form = TopicForm()
     else:
-        form = TopicForm(data=request)
+        form = TopicForm(data=request.POST)
         if form.is_valid():
             form.save()
 
             return redirect("MainApp:topics")
     context = {"form": form}
     return render(request, "MainApp/new_topic.html", context)
+
+
+def new_entry(request):
+    if request.method != "POST":  # is a get request
+        form = EntryForm()
+    else:
+        form = EntryForm(data=request.POST)
+        if form.is_valid():
+            form.save()
+
+            return redirect("MainApp:topics")
+    context = {"form": form}
+    return render(request, "MainApp/new_entry.html", context)

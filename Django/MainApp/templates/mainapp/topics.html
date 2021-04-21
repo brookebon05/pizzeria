@@ -2,7 +2,7 @@
 
 {% block content %}
 <p> Topics</p>
-<u1>{% for topic in topics %}
+<u1>{% for t in topics %}
     <li>
         <a href="{% url 'MainApp:topic' t.id %}">{{ t }} </a>
     </li>
@@ -11,8 +11,6 @@
     {% endfor %}
 </u1>
 
-<p> Learning Log helps you keep track of your learning with any topic
-
-</p>
+<a href="{% url 'MainApp:new_topic' %}">Add a new topic</a>
 
 {% endblock content %}
