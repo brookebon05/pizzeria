@@ -15,3 +15,4 @@ class EntryForm(forms.ModelForm):
         model = Entry
         fields = ["text"]
         label = {"Text: ": ""}
+        widgets = {"text": forms.Textarea(attrs={"cols": 80})}
