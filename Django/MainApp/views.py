@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Topic
+from .models import Topic, Entry
 from .forms import TopicForm, EntryForm
 
 # Create your views here.
@@ -53,3 +53,19 @@ def new_entry(request, topic_id):
 
     context = {"form": form, "topic": topic}
     return render(request, "MainApp/new_entry.html", context)
+
+
+def edit_entry(request, entry_id):
+    entry = Entry.objects.get(id=entry_id)
+    topic = entry.topic
+
+    if request.method != "POST":
+        form = EntryForm(instance=entry)
+    else:  # want to load tex
+        form = EntryForm(instance=entry, data=request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("MainApp:topic", topic_id=topic.id)
+
+    context = {"topic": topic, "entry": entry, "form": form}
+    return render(request, "MainApp/edit_entry.html", context)
