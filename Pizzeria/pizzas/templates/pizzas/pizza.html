@@ -1,0 +1,18 @@
+{% extends "pizzas/base.html" %}
+
+{% block content %}
+<p> Pizza: {{ pizza }} </p>
+<p> Pizzaname: {{ pizza.name }} </p>
+
+<u1> {% for topping in toppings %}
+    {% if pizza == topping.pizza %}
+    <li>
+        <p>{{ topping.name }}</p>
+
+    </li>
+
+    {% endif %}
+    {% endfor %}
+</u1>
+
+{% endblock content %}
