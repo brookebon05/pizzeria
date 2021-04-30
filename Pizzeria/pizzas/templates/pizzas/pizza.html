@@ -1,6 +1,4 @@
 {% extends "pizzas/base.html" %}
-{% load bootstrap4 %}
-{% load crispy_forms_tags %}
 
 {% block content %}
 <p> Pizza: {{ pizza }} </p>
@@ -15,12 +13,21 @@
     {% endif %}
     {% endfor %}
 </u1>
-<p> Photo: </p>
-<img src="{{p.image.url}}" class="img-thumbnail" style="max-height: 300px;" alt="">
+
+
+
+<form action="pizzas/comments" method="post" id="comment">
+
+    <label for="comment_author" class="required">Your name</label>
+    <input type="text" name="comment_author" id="comment_author" value="1" tabindex="1" required="required">
+    <p> <button type="submit" name="btn1" value=1>Submit Comment1</button>
+</form>
+
+
+
+</form>
 
 <td> Comments: &nbsp <a href="{% url 'pizzas:comments' pizza.id %}">{{c}}</a></td>
-
-
 
 
 {% endblock content %}

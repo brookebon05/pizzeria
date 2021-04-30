@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Pizza, Toppings, Comment, Post
+from .models import Pizza, Toppings, Comment  # Post
 from datetime import datetime, date
 
 # Create your views here.
@@ -31,6 +31,6 @@ def comments(request, pizza_id):
             date_added=date.today(),
         )
     comments = Comment.objects.filter(pizza=pizza_id)
-    post = Post.objects.get(id=pizza_id)
-    context = {"post": post, "comments": comments}
+    # post = Post.objects.get(id=pizza_id)
+    context = {"pizza": pizza, "comments": comments}
     return render(request, "pizzas/comments.html", context)

@@ -1,7 +1,8 @@
 {% extends "pizzas/base.html" %}
 
 {% block content %}
-<p> Pizzas </p>
+<h2> Pizzas </h2>
+
 <u1> {% for pizza in pizzas %}
     <li>
         <p>{{ pizza }}</p>
@@ -13,5 +14,20 @@
     <p> There are no toppings for this pizza</p>
     {% endfor %}
 </u1>
+<h2>Photos:</h2>
+<p>Cheese</p>
+<img src="images/cheese.jpeg" style="max-height: 300px;" alt="no pic">
+<br>
+<p> Hawaiian</p>
+<img src="images/hawaiian.jpeg" style="max-height: 300px;" alt="no pic">
+<br>
+<p> Margherita</p>
+<img src="images/Marg_pizza.jpeg" style="max-height: 300px;" alt="no pic">
+<br>
+<br>
+<p> Meat Lovers</p>
+<img src="meat_lovers/cheese.jpeg" style="max-height: 300px;" alt="no pic">
+
+
 
 {% endblock content %}
