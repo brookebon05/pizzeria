@@ -1,8 +1,9 @@
 {% extends "pizzas/base.html" %}
+{% load bootstrap4 %}
+{% load crispy_forms_tags %}
 
 {% block content %}
 <p> Pizza: {{ pizza }} </p>
-<p> Pizzaname: {{ pizza.name }} </p>
 
 <u1> {% for topping in toppings %}
     {% if pizza == topping.pizza %}
@@ -14,5 +15,12 @@
     {% endif %}
     {% endfor %}
 </u1>
+<p> Photo: </p>
+<img src="{{p.image.url}}" class="img-thumbnail" style="max-height: 300px;" alt="">
+
+<td> Comments: &nbsp <a href="{% url 'pizzas:comments' pizza.id %}">{{c}}</a></td>
+
+
+
 
 {% endblock content %}
