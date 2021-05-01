@@ -42,7 +42,7 @@
             align-content: center;
             margin-left: 100px;
             margin-right: auto;
-            background-color: rgb(144, 199, 250);
+            border: none;
             display: inline;
         }
 
@@ -129,20 +129,34 @@
                 document.getElementById('display2').innerHTML = document.getElementById("userName").value;
                 document.getElementById('userName').value = '';
                 document.getElementById('userInput').value = '';
-
             }
+
         </script>
 
-        <form>
+        <form method="post">
             <h2> Comments: </h2>
             <p>Your name:
-                <input type="text" id="userName" tabindex="1"=></input>
+                <input type="text" id="userName" name="name" tabindex="1"=></input>
             </p>
             <p></p>
 
-            <input type="text" id="userInput" tabindex="1" style="height:100px; font-size:16pt;"></input>
+            <input type="text" id="userInput" name="textdata" tabindex="1"
+                style="height:100px; font-size:16pt;"></input>
             <p></p>
         </form>
+        <?php
+        echo "HI";
+
+        if(isset($_POST['textdata']))
+        {
+            $data=$_POST['textdata'];
+            echo "HI";
+            $fp = fopen('comments.txt','a');
+            fwrite($fp, $data);
+            fclose($fp);
+        }
+        ?>
+
         <button onclick="printcomment()" type="submit" name="btn2">Submit Comment</button>
         <p>Comment: <span id='display'></span></p>
         <p>-- <span id='display2'></span></p>
