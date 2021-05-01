@@ -1,33 +1,102 @@
 {% extends "pizzas/base.html" %}
 
 {% block content %}
-<h2> Pizzas </h2>
 
-<u1> {% for pizza in pizzas %}
-    <li>
-        <p>{{ pizza }}</p>
-    </li>
-    <p>
-        <a href="{% url 'pizzas:pizza' pizza.id %}">Toppings</a>
-    </p>
-    {% empty %}
-    <p> There are no toppings for this pizza</p>
-    {% endfor %}
-</u1>
-<h2>Photos:</h2>
-<p>Cheese</p>
-<img src="images/cheese.jpeg" style="max-height: 300px;" alt="no pic">
-<br>
-<p> Hawaiian</p>
-<img src="images/hawaiian.jpeg" style="max-height: 300px;" alt="no pic">
-<br>
-<p> Margherita</p>
-<img src="images/Marg_pizza.jpeg" style="max-height: 300px;" alt="no pic">
-<br>
-<br>
-<p> Meat Lovers</p>
-<img src="meat_lovers/cheese.jpeg" style="max-height: 300px;" alt="no pic">
+<body style="background-color:rgb(207, 207, 207)">
+    <style>
+        h1 {
+            background-color: rgb(0, 66, 128);
+            color: rgb(211, 211, 211);
+            font-size: 65px;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif, serif;
+            text-shadow:
+                4px 4px 0 #000,
+                -2px -2px 0 #000,
+                2px -2px 0 #000,
+                -2px 2px 0 #000,
+                2px 2px 0 #000;
+        }
+
+        p {
+            color: black;
+            margin-left: 100px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 18px;
+        }
+
+        h2 {
+            font-size: 32px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            background-color: rgb(109, 0, 0);
+            color: rgb(236, 236, 236);
+            text-shadow:
+                2px 2px 0 #000000,
+                -.75px -.75px 0 #000000,
+                .75px -.75px 0 #000000,
+                -.75px .75px 0 #000000,
+                .75px .75px 0 #000000;
+        }
+
+        iframe {
+            align-content: center;
+            margin-left: 100px;
+            margin-right: auto;
+            background-color: rgb(144, 199, 250);
+            display: inline;
+        }
+
+        li {
+            font-size: 24px;
+            margin-left: 50px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        th {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 18px;
+        }
+
+        table th {
+            text-align: left;
+            padding: 4px 32px 4 px 8px;
+        }
+
+        table tr: nth-child(odd) td {
+            background-color: lightcyan;
+        }
+
+        table td {
+            border: 1px solid green;
+            padding: 4px 8px;
+        }
+
+        button {
+            margin-left: 50px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 18px;
+        }
+
+        input {
+            margin-left: 50px;
+        }
+    </style>
+
+    <body>
+        <h1> Pizzas </h1>
+
+        <u1> {% for pizza in pizzas %}
+            <h2>
+                {{ pizza }}
+            </h2>
+            <li>
+                <a href="{% url 'pizzas:pizza' pizza.id %}">Toppings</a>
+            </li>
+            {% empty %}
+            <p> There are no toppings for this pizza</p>
+            {% endfor %}
+        </u1>
+    </body>
 
 
-
-{% endblock content %}
+    {% endblock content %}

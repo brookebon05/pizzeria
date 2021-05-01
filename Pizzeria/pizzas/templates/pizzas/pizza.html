@@ -1,33 +1,155 @@
 {% extends "pizzas/base.html" %}
 
 {% block content %}
-<p> Pizza: {{ pizza }} </p>
 
-<u1> {% for topping in toppings %}
-    {% if pizza == topping.pizza %}
-    <li>
-        <p>{{ topping.name }}</p>
+<body style="background-color:rgb(207, 207, 207)">
+    <style>
+        h1 {
+            background-color: rgb(0, 66, 128);
+            color: rgb(211, 211, 211);
+            font-size: 65px;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif, serif;
+            text-shadow:
+                4px 4px 0 #000,
+                -2px -2px 0 #000,
+                2px -2px 0 #000,
+                -2px 2px 0 #000,
+                2px 2px 0 #000;
+        }
 
-    </li>
+        p {
+            color: black;
+            margin-left: 50px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 18px;
+        }
 
-    {% endif %}
-    {% endfor %}
-</u1>
+        h2 {
+            font-size: 32px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            background-color: rgb(109, 0, 0);
+            color: rgb(236, 236, 236);
+            text-shadow:
+                2px 2px 0 #000000,
+                -.75px -.75px 0 #000000,
+                .75px -.75px 0 #000000,
+                -.75px .75px 0 #000000,
+                .75px .75px 0 #000000;
+        }
+
+        iframe {
+            align-content: center;
+            margin-left: 100px;
+            margin-right: auto;
+            background-color: rgb(144, 199, 250);
+            display: inline;
+        }
+
+        li {
+            font-size: 20px;
+            margin-left: 100px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        th {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 18px;
+        }
+
+        table th {
+            text-align: left;
+            padding: 4px 32px 4 px 8px;
+        }
+
+        table tr: nth-child(odd) td {
+            background-color: lightcyan;
+        }
+
+        table td {
+            border: 1px solid green;
+            padding: 4px 8px;
+        }
+
+        button {
+            margin-left: 50px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 18px;
+        }
+
+        input {
+            margin-left: 50px;
+        }
+    </style>
+
+    <body>
+        <h1> Pizza: {{ pizza }} </h1>
+        <h2>Ingredients: </h2>
+
+        <u1> {% for topping in toppings %}
+            {% if pizza == topping.pizza %}
+            <li>
+                {{ topping.name }}
+            </li>
+            {% endif %}
+            {% endfor %}
+        </u1>
+
+        <h2>Picture:</h2>
+
+        {% if pizza.name == "Cheese" %}
+
+        <iframe
+            src="https://www.caseys.com/medias/sys_master/images/ha6/h84/8796491776030/8113_base-400x400/8113-base-400x400.png"
+            width="400" height="400"></iframe>
+
+        {% endif %}
+        {% if pizza.name == "Hawaiian" %}
+
+        <iframe src="https://www.cookingpanda.com/wp-content/uploads/2020/04/Hawaiian-Pizza.jpg" width="870"
+            height="650"></iframe>
+
+        {% endif %}
+        {% if pizza.name == "Meat Lovers" %}
+
+        <iframe
+            src="http://static1.squarespace.com/static/57acef8bd2b8575c1ea6a255/57ad19fe3e00beda1156d707/5a551f92e2c483babea0eb78/1604107763849/meatlovers.jpg?format=1500w"
+            height="820" width="1030"></iframe>
+
+        {% endif %}
+        {% if pizza.name == "Margherita" %}
+
+        <iframe src="https://cdn.loveandlemons.com/wp-content/uploads/2019/09/margherita-pizza-500x500.jpg" width="480"
+            height="500"></iframe>
+
+        {% endif %}
+        <script>
+            function printcomment() {
+                document.getElementById('display').innerHTML = document.getElementById("userInput").value;
+                document.getElementById('display2').innerHTML = document.getElementById("userName").value;
+                document.getElementById('userName').value = '';
+                document.getElementById('userInput').value = '';
+
+            }
+        </script>
+
+        <form>
+            <h2> Comments: </h2>
+            <p>Your name:
+                <input type="text" id="userName" tabindex="1"=></input>
+            </p>
+            <p></p>
+
+            <input type="text" id="userInput" tabindex="1" style="height:100px; font-size:16pt;"></input>
+            <p></p>
+        </form>
+        <button onclick="printcomment()" type="submit" name="btn2">Submit Comment</button>
+        <p>Comment: <span id='display'></span></p>
+        <p>-- <span id='display2'></span></p>
 
 
 
-<form action="pizzas/comments" method="post" id="comment">
-
-    <label for="comment_author" class="required">Your name</label>
-    <input type="text" name="comment_author" id="comment_author" value="1" tabindex="1" required="required">
-    <p> <button type="submit" name="btn1" value=1>Submit Comment1</button>
-</form>
 
 
-
-</form>
-
-<td> Comments: &nbsp <a href="{% url 'pizzas:comments' pizza.id %}">{{c}}</a></td>
-
-
-{% endblock content %}
+    </body>
+    {% endblock content %}
