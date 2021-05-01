@@ -19,7 +19,6 @@ class Toppings(models.Model):
         return self.name
 
 
-"""
 class Post(models.Model):
     description = models.CharField(max_length=255, blank=True)
     image = models.ImageField(upload_to="images", blank=True)
@@ -27,7 +26,6 @@ class Post(models.Model):
 
     def __str__(self):
         return self.description
-"""
 
 
 class Comment(models.Model):
